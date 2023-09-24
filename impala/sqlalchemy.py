@@ -180,7 +180,7 @@ class ImpalaExecutionContext(DefaultExecutionContext):
            cursor_configuration = self.execution_options.get('cursor_configuration', {})
            return self._dbapi_connection.cursor(configuration=cursor_configuration)
 
-       @util.memoized_property
+       #@util.memoized_property
        def _preserve_raw_colnames(self):
            # Ideally, this would also gate on hive.resultset.use.unique.column.names
            return self.execution_options.get('hive_raw_colnames', False)
